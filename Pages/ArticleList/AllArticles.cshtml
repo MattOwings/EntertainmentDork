@@ -1,0 +1,74 @@
+﻿@page
+@model EntertainmentDork.Pages.ArticleList.AllArticlesModel
+@{
+    ViewData["Title"] = "All Articles";
+}
+
+<h1>All Articles</h1>
+
+<br />
+<div class="container row p-0 m-0">
+    <div class="col-9">
+        <h2 class="text-info">Articles</h2>
+    </div>
+    <div class="col-3">
+        <a asp-page="Create" class="btn btn-info form-control text-white">Create New Book</a>
+    </div>
+
+    <div class="col-12 border p-3 mt-3">
+        <form method="post">
+            @if(Model.Articles.Count() > 0)
+            {
+                <table class="table table-striped border">
+                    <tr class="table-secondary">
+                        <th>
+                            <label asp-for="Articles.FirstOrDefault().Title"></label> <!-- same thing -->
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(m => m.Articles.FirstOrDefault().Author) <!-- same thing -->
+                        </th>
+                        <th>
+                            <label asp-for="Articles.FirstOrDefault().Date"></label>
+                        </th>
+                        <th>
+                            <label asp-for="Articles.FirstOrDefault().Published"></label>
+                        </th>
+                        <th>
+                            <label>Edit</label>
+                        </th>
+                        <th>
+                            <label>Delete</label>
+                        </th>
+                    </tr>
+                    @foreach(var article in Model.Articles)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(m => article.Title)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => article.Author)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => article.Date)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(m => article.Published)
+                                </td>
+                                <td>
+                                    <a class="btn btn-success btn-sm text-white">Edit</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-danger btn-sm">Delete</button>
+                                </td>
+                            </tr>
+                        }
+                </table>
+            } 
+            else
+            {
+                <p>No books available.</p>
+            }
+        </form>
+    </div>
+</div>
