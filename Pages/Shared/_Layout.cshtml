@@ -1,5 +1,4 @@
 ﻿<!DOCTYPE html>
-
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -8,69 +7,184 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <style>
-        .nav-link:hover {
-            transition: 0.5s !important; 
-            text-decoration: underline;
+        * {
+            margin: 0;
+            padding: 0;
         }
+
+        body {
+            background-color: #0f0f0f;
+        }
+
+        #top-navbar {
+            width: 100vw;
+            background-color: #0f0f0f;
+            min-height: 3rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: left;
+            -ms-flex-pack: left;
+            justify-content: left;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+            #top-navbar p {
+                font-size: 2.5rem;
+                color: #f0f0f0;
+                margin: 0;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            #top-navbar h1,
+            #top-navbar h1 a {
+                font-size: 2rem;
+                color: #f0f0f0;
+                font-style: italic;
+                margin: 0;
+                margin-bottom: 0.25rem;
+                margin-left: 0.25rem;
+            }
+
+            #top-navbar h2,
+            #top-navbar h2 a {
+                font-size: 1.75rem;
+                color: #f0f0f0;
+                text-decoration: none;
+                font-style: italic;
+                margin: 0;
+            }
+
+        #mid-navbar {
+            width: 100vw;
+            background-color: #f00000;
+            max-height: 2.25rem;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: left;
+            -ms-flex-pack: left;
+            justify-content: left;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+        }
+
+            #mid-navbar h2:first-of-type {
+                margin-left: 1rem;
+            }
+
+            #mid-navbar p {
+                font-size: 2.5rem;
+                color: #f0f0f0;
+                margin: 0;
+                margin-left: 0.5rem;
+                margin-right: 0.5rem;
+                margin-bottom: 0.25rem;
+            }
+
+            #mid-navbar h2,
+            #mid-navbar h2 a {
+                font-size: 1.5rem;
+                color: #f0f0f0;
+                text-decoration: none;
+                font-style: italic;
+                margin: 0;
+            }
+
+        #main {
+            background-color: #f0f0f0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+            #main * {
+                margin: 0;
+                padding: 0;
+            }
+
+            #main #main-left {
+                border: 2px solid red;
+                width: 60vw;
+            }
+
+            #main #main-right {
+                border: 1px solid green;
+                width: 30vw;
+            }
+
+        #footer {
+            background-color: #f0f0f0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            min-height: 3rem;
+        }
+
+            #footer * {
+                font-size: 1.5rem;
+            }
+        /*# sourceMappingURL=style.css.map */
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Entertainment Dork</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ArticleList/AllArticles">All</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Pleasant Positivity</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Noxious Negativity</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Movies & TV</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Gaming</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Celebrities</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Politics</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <div id="top-navbar">
+        <h1><a asp-page="#">EntertainmentDork.com</a></h1>
+        <p>·</p>
+        <h2><a href="#">Peppered Positivity</a></h2>
+        <p>·</p>
+        <h2><a href="#">Noxious Negativity</a></h2>
+        <p>·</p>
+        <h2><a href="#">Exclusives & News</a></h2>
+        <p>·</p>
+        <h2><a href="#">Popular</a></h2>
+    </div>
+
+    <div id="mid-navbar">
+        <h2><a href="#">Movies & TV</a></h2>
+        <p>·</p>
+        <h2><a href="#">Reviews & Opinions</a></h2>
+        <p>·</p>
+        <h2><a href="#">Gaming</a></h2>
+        <p>·</p>
+        <h2><a href="#">Technology</a></h2>
+        <p>·</p>
+        <h2><a href="#">Science</a></h2>
+        <p>·</p>
+        <h2><a href="#">Fan Fiction</a></h2>
+        <p>·</p>
+        <h2><a href="#">Celebrities</a></h2>
+        <p>·</p>
+        <h2><a href="#">All Articles</a></h2>
+    </div>
 
     <!-- Body render -->
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    @RenderBody()
 
 
     <!-- Footer render -->
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; Entertainment Dork 2022 - A News, Blog, & Publication Web Application - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+    <div id="footer">
+        <h1>2022 © Entertainment Dork</h1>
+    </div>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--<script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>-->
 
-    @RenderSection("Scripts", required: false)
+    <!--at--><!--RenderSection("Scripts", required: false)-->
 </body>
 </html>
